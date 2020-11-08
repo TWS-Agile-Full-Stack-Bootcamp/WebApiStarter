@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
+﻿using Microsoft.AspNetCore.Mvc;
 
 namespace WebApiStarter.Controllers
 {
@@ -11,7 +6,7 @@ namespace WebApiStarter.Controllers
     [Route("[controller]")]
     public class HelloController : ControllerBase
     {
-        [HttpGet]
+        [Route("")]
         public string Get()
         {
             return "Hello World";
