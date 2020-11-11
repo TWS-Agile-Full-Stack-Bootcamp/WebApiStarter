@@ -6,7 +6,7 @@ namespace WebApiStarter.Controllers
     [Route("[controller]")]
     public class HelloController : ControllerBase
     {
-        [Route("")]
+        [HttpGet("")]
         public ActionResult Get()
         {
             return Ok("Hello World");

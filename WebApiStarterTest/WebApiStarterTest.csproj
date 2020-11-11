@@ -17,4 +17,7 @@
   <ItemGroup>
     <ProjectReference Include="..\WebApiStarter\WebApiStarter.csproj" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Controllers\" />
+  </ItemGroup>
 </Project>
