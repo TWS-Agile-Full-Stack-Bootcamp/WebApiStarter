@@ -11,6 +11,11 @@ namespace WebApiStarter.Controllers
         [HttpPost]
         public ActionResult Create(Email email)
         {
+            if (email.To == null)
+            {
+                return this.BadRequest();
+            }
+
             var emailID = new Random().Next();
             return this.Created($"/email/{emailID}", email);
         }

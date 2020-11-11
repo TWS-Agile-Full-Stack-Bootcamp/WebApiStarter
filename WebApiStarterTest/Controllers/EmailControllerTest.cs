@@ -24,5 +24,19 @@ namespace WebApiStarterTest.Controllers
             Assert.IsType<CreatedResult>(actionResult);
             Assert.Matches("/email/\\S+", ((CreatedResult)actionResult).Location);
         }
+
+        [Fact]
+        public void Should_return_bad_request_when_create_email_given_its_to_field_missing()
+        {
+            //given
+            var emailController = new EmailController();
+            var email = new Email() { From = "Tom", Subject = "Invitation", Content = "Go for a walk" };
+
+            //when
+            ActionResult actionResult = emailController.Create(email);
+
+            //then
+            Assert.Equal((int)HttpStatusCode.BadRequest, ((StatusCodeResult)actionResult).StatusCode);
+        }
     }
 }
